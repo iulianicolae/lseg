@@ -1,4 +1,4 @@
-package lseg;
+package lseg.model;
 
 import lseg.command.Command;
 import lseg.command.ToggleCommand;

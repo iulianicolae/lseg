@@ -1,5 +1,10 @@
 package lseg;
 
+import lseg.model.Coordinates;
+import lseg.model.Instruction;
+import lseg.model.InstructionType;
+import lseg.model.Interval;
+
 import java.io.IOException;
 import java.net.URI;
 import java.nio.file.Files;

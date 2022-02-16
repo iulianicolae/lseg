@@ -1,4 +1,4 @@
-package lseg;
+package lseg.model;
 
 public class Coordinates {
     public int x;

@@ -1,5 +1,7 @@
 package lseg;
 
+import lseg.model.Instruction;
+import lseg.model.InstructionType;
 import org.junit.Test;
 
 import java.io.IOException;

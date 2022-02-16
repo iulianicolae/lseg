@@ -1,6 +1,6 @@
 package lseg.receiver;
 
-import lseg.Interval;
+import lseg.model.Interval;
 import lseg.LightsStatus;
 
 public interface LightsReceiver {

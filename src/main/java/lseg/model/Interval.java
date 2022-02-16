@@ -1,4 +1,4 @@
-package lseg;
+package lseg.model;
 
 public class Interval {
     public Coordinates start;

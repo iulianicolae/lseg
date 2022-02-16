@@ -1,6 +1,7 @@
 package lseg;
 
 import lseg.command.Command;
+import lseg.model.Instruction;
 import lseg.receiver.LightsReceiver;
 
 import java.io.IOException;

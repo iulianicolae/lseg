@@ -1,6 +1,9 @@
 package lseg;
 
-import lseg.*;
+import lseg.model.Coordinates;
+import lseg.model.Instruction;
+import lseg.model.InstructionType;
+import lseg.model.Interval;
 import lseg.receiver.LightsReceiver;
 import org.junit.Test;
 
@@ -13,17 +16,17 @@ public class LightshowTest {
         Lightshow lightshow = new Lightshow();
         LightsReceiver lightsReceiver = LightsReceiverFactory.getLightReceiver();
         LightsStatus lightsStatus = new LightsStatus();
-        Interval interval = new Interval(new lseg.Coordinates(0, 0), new lseg.Coordinates(999, 999));
+        Interval interval = new Interval(new Coordinates(0, 0), new Coordinates(999, 999));
         Instruction turnOnInstruction = new Instruction(InstructionType.TURN_ON, interval);
         lightshow.executeInstruction(lightsReceiver, lightsStatus, turnOnInstruction);
         assertEquals(1000000, lightsStatus.counter);
 
-        interval = new Interval(new lseg.Coordinates(499, 499), new lseg.Coordinates(500, 500));
+        interval = new Interval(new Coordinates(499, 499), new Coordinates(500, 500));
         Instruction turnOffInstruction = new Instruction(InstructionType.TURN_OFF, interval);
         lightshow.executeInstruction(lightsReceiver, lightsStatus, turnOffInstruction);
         assertEquals(999996, lightsStatus.counter);
 
-        interval = new Interval(new lseg.Coordinates(0, 499), new lseg.Coordinates(999, 500));
+        interval = new Interval(new Coordinates(0, 499), new Coordinates(999, 500));
         Instruction toggleInstruction = new Instruction(InstructionType.TOGGLE, interval);
         lightshow.executeInstruction(lightsReceiver, lightsStatus, toggleInstruction);
         assertEquals(998004, lightsStatus.counter);
@@ -35,15 +38,15 @@ public class LightshowTest {
         Lightshow lightshow = new Lightshow();
         LightsReceiver lightsReceiver = LightsReceiverFactory.getLightReceiver();
         LightsStatus lightsStatus = new LightsStatus();
-        Interval interval = new Interval(new lseg.Coordinates(0, 0), new lseg.Coordinates(999, 999));
+        Interval interval = new Interval(new Coordinates(0, 0), new Coordinates(999, 999));
         Instruction turnOnInstruction = new Instruction(InstructionType.TURN_ON, interval);
         lightshow.executeInstruction(lightsReceiver, lightsStatus, turnOnInstruction);
 
-        interval = new Interval(new lseg.Coordinates(499, 499), new lseg.Coordinates(500, 500));
+        interval = new Interval(new Coordinates(499, 499), new Coordinates(500, 500));
         Instruction turnOffInstruction = new Instruction(InstructionType.TURN_OFF, interval);
         lightshow.executeInstruction(lightsReceiver, lightsStatus, turnOffInstruction);
 
-        interval = new Interval(new lseg.Coordinates(0, 499), new lseg.Coordinates(999, 500));
+        interval = new Interval(new Coordinates(0, 499), new Coordinates(999, 500));
         Instruction toggleInstruction = new Instruction(InstructionType.TOGGLE, interval);
         lightshow.executeInstruction(lightsReceiver, lightsStatus, toggleInstruction);
 
